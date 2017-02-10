@@ -52,7 +52,7 @@
                 </p>
                 <input name="title" type="text">
                 <p>Содержимое</p>
-                <textarea name="content"></textarea>
+                <textarea name="content" style="width: 600px;"></textarea>
                 <input value="Создать страницу" type="submit">
             </form>
         </div>

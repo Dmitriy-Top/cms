@@ -10,7 +10,7 @@
     </context-param>
     <context-param>
         <param-name>resteasy.servlet.mapping.prefix</param-name>
-        <param-value>/getcontetnt</param-value>
+        <param-value>/getcontent</param-value>
     </context-param>
     <listener>
         <listener-class>
@@ -102,6 +102,6 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>resteasy-servlet</servlet-name>
-        <url-pattern>/getcontetnt/*</url-pattern>
+        <url-pattern>/getcontent/*</url-pattern>
     </servlet-mapping>
 </web-app>

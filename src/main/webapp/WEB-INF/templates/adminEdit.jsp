@@ -46,7 +46,7 @@
                 </p>
                 <input name="title" value="<%=pageEdit.getTitle()%>"  type="text">
                 <p>Содержимое</p>
-                <textarea name="content"><%=pageEdit.getContent()%></textarea>
+                <textarea name="content" style="width: 600px;"><%=pageEdit.getContent()%></textarea>
                 <input value="Сохранить страницу" type="submit">
             </form>
         </div>
