@@ -6,6 +6,8 @@ String path = request.getRequestURI().split(request.getContextPath())[1]; //по
 Page findPage = PageDAO.getPageByPath(path); //получаем из бд страницу
 request.setAttribute("findPage",findPage);
 request.getRequestDispatcher(findPage.getTemplatePath()).include(request,response); //отправляем на отрисовку
+
+
 %>
 <!--path is:<%=path%>-->
 

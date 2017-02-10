@@ -4,11 +4,20 @@ package main.java.entity;
  * Created by riot_000 on 06.02.2017.
  */
 public class Page {
+    private int id;
     private String uri;
     private String header;
     private String content;
     private String title;
     private String templatePath;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTemplatePath() {
         return templatePath;
@@ -50,7 +59,8 @@ public class Page {
         this.title = title;
     }
 
-    public Page(String uri, String header, String content, String title, String templatePath) {
+    public Page(int id,String uri, String header, String content, String title, String templatePath) {
+        this.id = id;
         this.uri = uri;
         this.header = header;
         this.content = content;

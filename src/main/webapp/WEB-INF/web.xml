@@ -1,15 +1,107 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-    <servlet-name>main</servlet-name>
-    <jsp-file>/WEB-INF/main.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>main</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+    <display-name>Archetype Created Web Application</display-name>
+    <context-param>
+        <param-name>resteasy.scan</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy.servlet.mapping.prefix</param-name>
+        <param-value>/getcontetnt</param-value>
+    </context-param>
+    <listener>
+        <listener-class>
+            org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+        </listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <servlet-class>
+            org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+        </servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <jsp-file>/WEB-INF/main.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <jsp-file>/WEB-INF/templates/admin.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin-addPage</servlet-name>
+        <jsp-file>/WEB-INF/models/admin/addPage.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin-menu</servlet-name>
+        <jsp-file>/WEB-INF/templates/adminMenu.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin-edit</servlet-name>
+        <jsp-file>/WEB-INF/templates/adminEdit.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin-update</servlet-name>
+        <jsp-file>/WEB-INF/models/admin/updatePage.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin-delete</servlet-name>
+        <jsp-file>/WEB-INF/models/admin/deletePage.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin-auth</servlet-name>
+        <jsp-file>/WEB-INF/models/admin/loginUser.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>admin-login</servlet-name>
+        <jsp-file>/WEB-INF/templates/login.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin-addPage</servlet-name>
+        <url-pattern>/admin/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin-menu</servlet-name>
+        <url-pattern>/admin/menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin-edit</servlet-name>
+        <url-pattern>/admin/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin-update</servlet-name>
+        <url-pattern>/admin/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin-login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin-auth</servlet-name>
+        <url-pattern>admin/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin-delete</servlet-name>
+        <url-pattern>/admin/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <url-pattern>/getcontetnt/*</url-pattern>
+    </servlet-mapping>
 </web-app>
